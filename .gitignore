@@ -1,0 +1,15 @@
+# CARPETAS
+
+# Configuraciones:
+/.vscode
+
+# Dependencias:
+/node_modules
+/vendor
+
+
+# ARCHIVOS
+pruebas.php
+info.php
+pruebas.html
+
