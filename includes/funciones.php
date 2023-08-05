@@ -64,3 +64,16 @@ Function mostrarNotificacion($codigo) {
 
   return $mensaje;
 }
+
+function validarORedireccionar(string $url) {
+    //* Obtener id de la Propiedad a Consultar y Validar si es Entero
+    $id = $_GET['id'];
+    $id = filter_var($id, FILTER_VALIDATE_INT);
+  
+    //* Validar el id en la URL para que sea un Número Entero
+    if(!$id) {
+      header("Location: $url");
+    }
+
+    return $id;
+}

@@ -47,7 +47,7 @@ class ActiveRecord {
     //* Mensaje de Exito al Guardar
     if($resultado) {
       //* Redireccionar al Usuario
-      header('Location: /admin/?resultado=1');
+      header('Location: /admin?resultado=1');
     };
 
   }
@@ -74,7 +74,7 @@ class ActiveRecord {
     //* Mensaje de Exito al Guardar
     if($resultado) {
       //* Redireccionar al Usuario
-      header('Location: /admin/index.php?resultado=2');
+      header('Location: /admin?resultado=2');
     };
   }
 
