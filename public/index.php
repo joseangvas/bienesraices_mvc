@@ -3,7 +3,7 @@
 require_once __DIR__ . '/../includes/app.php';
 
 use MVC\Router;
-use Controllers\propiedadController;
+use Controllers\PropiedadController;
 
 $router = new Router();
 
@@ -12,6 +12,3 @@ $router->get('/propiedades/crear', [PropiedadController::class, 'crear']);
 $router->get('/propiedades/actualizar', [PropiedadController::class, 'actualizar']);
 
 $router->comprobarRutas();
-
-
-
