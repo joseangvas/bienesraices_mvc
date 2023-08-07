@@ -30,7 +30,7 @@ class Router {
       // La URL Existe y hay una Función Asociada
       call_user_func($fn, $this);
     } else {
-      echo "Página No Encontrada";
+      echo "Página No Encontrada o Ruta No Válida";
     }
   }
 
