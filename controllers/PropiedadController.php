@@ -8,12 +8,13 @@ use Model\Vendedor;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class PropiedadController {
+  
   public static function index(Router $router) {
 
     $propiedades = Propiedad::all();
     $vendedores = Vendedor::all();
     
-    //* Muestra Mensaje Condicional 
+    //* Muestra Mensaje Condicional si se Realizó la Operación
     $resultado = $_GET['resultado'] ?? null;
 
     $router->render('propiedades/admin', [
@@ -26,11 +27,9 @@ class PropiedadController {
   //* CREAR UNA PROPIEDAD EN LA BASE DE DATOS
   public static function crear(Router $router) {
 
+    $errores = Propiedad::getErrores();
     $propiedad = new Propiedad;
     $vendedores = Vendedor::all();
-
-    //* Arreglo con Mensaje de Errores
-    $errores = Propiedad::getErrores();
 
     //* Método POST para Crear una Propiedad
     if($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -85,7 +84,7 @@ class PropiedadController {
     // Obtener Datos de la Propiedad
     $propiedad = Propiedad::find($id);
 
-    // Obtener Datos de Los Vendedores
+    // Consultar para Obtener Datos de Los Vendedores
     $vendedores = Vendedor::all();
 
     // Arreglo con Mensaje de Errores
@@ -94,8 +93,13 @@ class PropiedadController {
     //* Método POST para Actualizar Propiedad
     if($_SERVER['REQUEST_METHOD'] === 'POST') {
     
+      //* Asignar los Atributos
+      $args = $_POST['propiedad'];
+
+      $propiedad->sincronizar($args);
+
       //* Crear una Nueva Instancia
-      $propiedad = new Propiedad($_POST['propiedad']);
+      // $propiedad = new Propiedad($_POST['propiedad']);
 
         //* Generar un Nombre Unico de Imagen
       $nombreImagen = md5( uniqid( rand(), true)) . ".jpg";

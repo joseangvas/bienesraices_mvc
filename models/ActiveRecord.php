@@ -85,6 +85,7 @@ class ActiveRecord {
     $query .= join("', '", array_values($atributos));
     $query .= "') ";
 
+    //* Resultado de la Consulta
     $resultado = self::$db->query($query);
 
     return $resultado;
@@ -159,6 +160,7 @@ class ActiveRecord {
   //* Identificar y Unir los Atributos de la BD
   public function atributos() {
     $atributos = [];
+    
     foreach(static::$columnasDB as $columna) {
       if($columna === 'id') continue;
       $atributos[$columna] = $this->$columna;

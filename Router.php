@@ -37,14 +37,13 @@ class Router {
   //* Mostrar una Vista
   public function render($view, $datos = []) {
 
-    foreach($datos as $key => $value) 
-    {
+    foreach($datos as $key => $value) {
       $$key = $value;
     }
 
     ob_start();   // Almacenamiento en Memoria
-    include_once __DIR__ . "/views/$view.php";
+    include_once __DIR__ . "/views/$view.php";  // Ejecutar Página Solicitada por Index.php
     $contenido = ob_get_clean();  // Limpia el Buffer de Memoria
-    include_once __DIR__ . "/views/layout.php";
+    include_once __DIR__ . "/views/layout.php";  // Ejecución del Master Page
   }
 }
