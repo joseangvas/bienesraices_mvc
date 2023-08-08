@@ -9,7 +9,7 @@ class ActiveRecord {
   protected static $db;
   protected static $columnasDB = [];
   protected static $tabla = '';
-
+ 
   //* Crear Array de Validación de Errores
   protected static $errores = [];
 
@@ -85,10 +85,16 @@ class ActiveRecord {
     $query .= join("', '", array_values($atributos));
     $query .= "') ";
 
-    //* Resultado de la Consulta
+      //* Resultado de la Consulta
     $resultado = self::$db->query($query);
 
-    return $resultado;
+    //* Mensaje de Exito al Guardar
+    if($resultado) {
+      //* Redireccionar al Usuario
+      header('Location: /admin?resultado=1');
+    };
+    
+    // return $resultado;
   }
 
   //* ACTUALIZAR REGISTRO EN LA BASE DE DATOS
@@ -110,7 +116,13 @@ class ActiveRecord {
 
     $resultado = self::$db->query($query);
 
-    return $resultado;
+    //* Mensaje de Exito al Guardar
+    if($resultado) {
+      //* Redireccionar al Usuario
+      header('Location: /admin?resultado=2');
+    };
+    
+    // return $resultado;
   }
 
   //* ELIMINAR UN REGISTRO DE LA BASE DE DATOS
@@ -124,7 +136,13 @@ class ActiveRecord {
       $this->borrarImagen();
     }
 
-    return $resultado;
+    //* Mensaje de Exito al Guardar
+    if($resultado) {
+      //* Redireccionar al Usuario
+      header('Location: /admin?resultado=3');
+    };
+    
+    // return $resultado;
   }
 
   //* CONSULTAR EN LA BASE DE DATOS

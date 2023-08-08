@@ -61,11 +61,8 @@ class PropiedadController {
         $image->save(CARPETA_IMAGENES . $nombreImagen);
         
         //* guardar en la Base de Datos
-        $resultado = $propiedad->guardar();
+        $propiedad->guardar();
 
-        if($resultado) {
-          header('Location: /admin');
-        }
       };
     };
       
@@ -126,11 +123,8 @@ class PropiedadController {
         $image->save(CARPETA_IMAGENES . $nombreImagen);
         
         //* guardar en la Base de Datos
-        $resultado = $propiedad->guardar();
+        $propiedad->guardar();
 
-        if($resultado) {
-          header('Location: /admin');
-        }
       };
     };
 
@@ -155,12 +149,9 @@ class PropiedadController {
 
         // encontrar y eliminar la propiedad
         $propiedad = Propiedad::find($id);
-        $resultado = $propiedad->eliminar();
 
-        // Redireccionar
-        if($resultado) {
-            header('Location: /admin');
-        }
+        $propiedad->eliminar();
+
       }
     }
   }
