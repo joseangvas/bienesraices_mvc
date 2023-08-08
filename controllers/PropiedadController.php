@@ -139,19 +139,20 @@ class PropiedadController {
   public static function eliminar(Router $router) {
 
     if($_SERVER['REQUEST_METHOD'] === 'POST') {
-      $tipo = $_POST['tipo'];
 
-      // peticiones validas
-      if(validarTipoContenido($tipo) ) {
-        // Leer el id
-        $id = $_POST['id'];
-        $id = filter_var($id, FILTER_VALIDATE_INT);
+      //* Validar el ID
+      $id = $_POST['id'];
+      $id = filter_var($id, FILTER_VALIDATE_INT);
 
-        // encontrar y eliminar la propiedad
-        $propiedad = Propiedad::find($id);
-
-        $propiedad->eliminar();
-
+      if($id) {
+        // peticiones validas
+        $tipo = $_POST['tipo'];
+        
+        if(validarTipoContenido($tipo) ) {
+          // encontrar y eliminar la propiedad
+          $propiedad = Propiedad::find($id);
+          $propiedad->eliminar();
+        }
       }
     }
   }
