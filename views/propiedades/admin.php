@@ -1,5 +1,5 @@
 <main class="contenedor seccion">
-  <h1>Administrador de Bienes Raíces</h1>
+  <h1>Administrador de Propiedades</h1>
 
   <?php
     if($resultado) {
@@ -12,9 +12,7 @@
   ?>
 
   <a href="/propiedades/crear" class="boton boton-verde">Nueva Propiedad</a>
-  <a href="/vendedores/crear.php" class="boton boton-amarillo">Nuevo Vendedor</a>
 
-  <h2>Propiedades</h2>
   <table class="propiedades">
     <thead>
       <tr>

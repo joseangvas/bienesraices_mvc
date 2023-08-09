@@ -91,7 +91,21 @@ class ActiveRecord {
     //* Mensaje de Exito al Guardar
     if($resultado) {
       //* Redireccionar al Usuario
-      header('Location: /admin?resultado=1');
+      switch(static::$tabla) {
+        case 'propiedades':
+          header('Location: /propiedades/admin?resultado=1');
+          break;
+
+          case 'vendedores':
+            header('Location: /vendedores/admin?resultado=1');
+            break;
+
+          case 'usuarios':
+            header('Location: /usuarios/admin?resultado=1');
+            break;
+            
+          default:
+      }
     };
     
     // return $resultado;
@@ -119,10 +133,25 @@ class ActiveRecord {
     //* Mensaje de Exito al Guardar
     if($resultado) {
       //* Redireccionar al Usuario
-      header('Location: /admin?resultado=2');
-    };
+      switch(static::$tabla) {
+        case 'propiedades':
+          header('Location: /propiedades/admin?resultado=2');
+          break;
+
+          case 'vendedores':
+            header('Location: /vendedores/admin?resultado=2');
+            break;
+
+          case 'usuarios':
+            header('Location: /usuarios/admin?resultado=2');
+            break;
+            
+          default:
+      }
     
     // return $resultado;
+
+    }
   }
 
   //* ELIMINAR UN REGISTRO DE LA BASE DE DATOS
@@ -139,10 +168,25 @@ class ActiveRecord {
     //* Mensaje de Exito al Guardar
     if($resultado) {
       //* Redireccionar al Usuario
-      header('Location: /admin?resultado=3');
-    };
+      switch(static::$tabla) {
+        case 'propiedades':
+          header('Location: /propiedades/admin?resultado=3');
+          break;
+
+          case 'vendedores':
+            header('Location: /vendedores/admin?resultado=3');
+            break;
+
+          case 'usuarios':
+            header('Location: /usuarios/admin?resultado=3');
+            break;
+            
+          default:
+      }
     
     // return $resultado;
+
+    }
   }
 
   //* CONSULTAR EN LA BASE DE DATOS

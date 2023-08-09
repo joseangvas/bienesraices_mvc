@@ -21,6 +21,33 @@ table.propiedades {
   margin-top: 3rem;
   width: 100%;
   border-spacing: 0;
+  border: 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+
+  thead {
+    background-color: $verde;
+
+    th {
+      color: $blanco;
+      padding: 2rem;
+    }
+  }
+  
+  .imagen-tabla {
+    width: 10rem;
+  }
+}
+
+table.vendedores {
+  margin-top: 3rem;
+  width: 100%;
+  border-spacing: 0;
+  border: 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
 
   thead {
     background-color: $verde;
@@ -39,3 +66,14 @@ table.propiedades {
 .imagen-small {
   width: 30rem;
 }
+
+ .cortar {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: auto;
+
+  .btn-corto {
+   width: 20% 
+  }
+ }
