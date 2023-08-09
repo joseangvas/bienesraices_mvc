@@ -76,7 +76,7 @@ class PropiedadController {
   //* ACTUALIZAR DATOS DE UNA PROPIEDAD EXISTENTE
   public static function actualizar(Router $router) {
     
-    $id = validarORedireccionar('/admin');
+    $id = validarORedireccionar('/propiedades/admin');
 
     // Obtener Datos de la Propiedad
     $propiedad = Propiedad::find($id);

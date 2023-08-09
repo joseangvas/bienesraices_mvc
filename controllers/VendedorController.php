@@ -103,7 +103,6 @@ class VendedorController {
         if(validarTipoContenido($tipo) ) {
           // encontrar y eliminar la propiedad
           $vendedor = Vendedor::find($id);
-
           $vendedor->eliminar();
         }
       }
