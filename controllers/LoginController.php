@@ -13,10 +13,34 @@ class LoginController {
 
     if($_SERVER['REQUEST_METHOD'] === 'POST') {
       
-      debuguear($_POST);
+      $auth = new Admin($_POST);
+
+      $errores = $auth->validar();
+
+      if(empty($errores)) {
+        // Verificar si el Usuario Existe
+        $resultado = $auth->existeUsuario();
+
+        if(!$resultado) {
+          // Verificar si el Usuario Existe o No (Mensaje de Error)
+          $errores = Admin::getErrores();
+        } else {
+          // Verificar el Password
+          $autenticado = $auth->comprobarPassword($resultado);
+          
+          if($autenticado) {
+            // Autenticar al Usuario
+            
+          } else {
+            // Password Incorrecto (Mensaje de Error)
+            $errores = Admin::getErrores();
+           }
+
+
+        }
+      }
 
     }
-
 
     $router->render('auth/login', [
       'errores' => $errores

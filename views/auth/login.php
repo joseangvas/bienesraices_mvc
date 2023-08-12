@@ -2,15 +2,16 @@
   <h1>Iniciar Sesión</h1>
 
   <?php
-    foreach($errores as $error): ?>
-      <div class="alerta error">
-        <?php echo $error; ?>
-      </div>
-
-
-  <?php endforeach; ?>
-
-  <form method="POST" action="" class="formulario" action="/login">
+    if($errores) {
+      foreach($errores as $error): ?>
+        <div class="alerta error">
+          <?php echo $error; ?>
+        </div>
+      <?php endforeach; 
+    };
+  ?>
+  
+  <form method="POST" class="formulario" action="/login">
     <fieldset>
         <legend>Usuario y Password</legend>
 
