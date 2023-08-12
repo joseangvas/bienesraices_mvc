@@ -12,6 +12,8 @@
   ?>
 
   <a href="/propiedades/crear" class="boton boton-verde">Nueva Propiedad</a>
+  <a href="/vendedores/admin" class="boton boton-amarillo">Ir a Vendedores</a>
+  <a href="/" class="boton boton-amarillo btn-corto">Principal</a>
 
   <table class="propiedades">
     <thead>

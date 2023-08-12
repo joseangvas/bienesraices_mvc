@@ -11,6 +11,7 @@ use Controllers\PaginasController;
 $router = new Router();
 
 //********  URL'S DEL MODULO DE ADMINISTRACION (Páginas Privadas)  *********
+
 //*** Rutas de Propiedades ***
 $router->get('/propiedades/admin', [PropiedadController::class, 'index']);
 $router->get('/propiedades/crear', [PropiedadController::class, 'crear']);

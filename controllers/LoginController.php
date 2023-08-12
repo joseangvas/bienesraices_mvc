@@ -30,27 +30,26 @@ class LoginController {
           
           if($autenticado) {
             // Autenticar al Usuario
-            
+            $auth->autenticar();
+
           } else {
             // Password Incorrecto (Mensaje de Error)
             $errores = Admin::getErrores();
            }
-
-
         }
       }
-
     }
 
     $router->render('auth/login', [
       'errores' => $errores
-
     ]);
 
   }
 
   public static function logout() {
-    echo 'Desde Logout';
+    session_start();
+    $_SESSION = [];
+    header('Location: /');
   }
 
 }

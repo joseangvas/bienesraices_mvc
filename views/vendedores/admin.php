@@ -11,10 +11,13 @@
     }
   ?>
 
-  <section class="cortar">
+<section class="cortar">
+  <div class="btn-vend">
     <a href="/vendedores/crear" class="boton boton-verde btn-corto">Nuevo Vendedor</a>
+    <a href="/propiedades/admin" class="boton boton-amarillo btn-corto">Ir a Propiedades</a>
+  </div>
 
-    <table class="vendedores">
+  <table class="vendedores">
       <thead>
         <tr>
           <th>ID</th>
